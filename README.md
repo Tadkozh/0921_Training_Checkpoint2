@@ -40,5 +40,5 @@ You are going to use react-router and react-router-dom
 - In ```<CharacterCard />``` component, add a link who redirect on the "/character/:id" with the id of the character
 
 ### Bonus 🧨
-- In ```<CharacterCard />``` component, add a button that delete the character from the list in ```CharactersList />```
+- In ```<CharacterCard />``` component, add a button to deleting the character from the list in ```CharactersList />```
 - Use TAILWIND : You can start by looking at the documentation about how to install it. [Tailwind installation for React](https://tailwindcss.com/docs/guides/create-react-app "Documentation")
