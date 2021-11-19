@@ -24,7 +24,7 @@
 - Your ```<CharacterCard />``` component will need some props to display the character informations. You can add more informations than name and image if you want.
 
 ### Filtering 🗒
-- Now that your are displaying all games, your next mission is to add a filter on this list.
+- Now that your are displaying all characters, your next mission is to add a filter on this list.
 - Add a button to the ```<CharactersList />``` component, when you click on it, it will display only the characters who are alive. If you click on this button again, the list will display all the characters again.
 
 ### Paginate ⏪ ⏩ 
