@@ -13,7 +13,10 @@ export const CharactersList = () => {
 
     const getCharatersFromApi = () => {
         axios.get('https://rickandmortyapi.com/api/character')
-        .then(response => setCharacters(response.data.results))
+        .then(response => {
+            setCharacters(response.data.results)
+            console.log(response.data)
+        }
     }
 
     const filterCharacters = () => {
@@ -22,7 +25,7 @@ export const CharactersList = () => {
             setCharacters(characters.filter(character => character.status === "Alive"))
         }else{
             setCharactersAlive(false)
-            setCharactersAlive()
+            getCharatersFromApi()
         }
     }
 
