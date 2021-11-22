@@ -13,7 +13,7 @@ export const CharactersList = () => {
         getDataFromApi(currentPage)
     }, []);
 
-    const getDataFromApi = (numberPage: any) => {
+    const getDataFromApi = (numberPage) => {
         axios.get(`https://rickandmortyapi.com/api/character?page=${numberPage}`)
         .then(response => {
             setCharacters(response.data.results)
@@ -24,10 +24,10 @@ export const CharactersList = () => {
     }
 
     const filterCharacters = () => {
-        if (charactersAlive === false){
+        if (charactersAlive === false) {
             setCharactersAlive(true)
-            setCharacters(characters.filter(character => character.status === "Alive"))
-        }else{
+            setCharacters(characters.filter(character => character.status === 'Alive'))
+        } else {
             setCharactersAlive(false)
             getDataFromApi()
         }
@@ -41,13 +41,16 @@ export const CharactersList = () => {
             <h1>Characters List</h1>
             <div>
                 <p>Total result : {infos && infos.count}</p>
-                <p>{currentPage} / {infos && infos.pages}</p>
+                <p>{currentPage} / {infos && infos.pages} </p>
             </div>
             <div>
-                <button type ="button" onClick={() => filterCharacters()}>{charactersAlive ?'Get All Characters' : 'Get Alive Characters'}</button>
+                <button 
+                type="button" 
+                onClick={() => filterCharacters()}>{charactersAlive ? 'Get All Characters' : 'Get Alive Characters'}
+                </button>
                 <br />
-                <button type ="button" onClick={() => infos.prev != null && getDataFromApi(currentPage - 1)}>'Prev'</button>
-                <button type ="button" onClick={() => infos.next != null && getDataFromApi(currentPage + 1)}>'next'</button>
+                <button type="button" onClick={() => infos.prev != null && getDataFromApi(currentPage - 1)}>Prev</button>
+                <button type="button" onClick={() => infos.next != null && getDataFromApi(currentPage + 1)}>Next</button>
             </div>
             <div>
                 {
